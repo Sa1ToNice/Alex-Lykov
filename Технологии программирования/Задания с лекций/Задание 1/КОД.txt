@@ -1,0 +1,41 @@
+public class Animal {
+    
+    public String name;
+    public int countOfLegs;
+    public String voice;
+    public void introduction(){
+        System.out.println("Hello I'm " + name + " I have " + countOfLegs + " legs");
+    }
+   
+    public void getVoice(){}
+   
+    public void someMethodFromParent(){
+        System.out.println("I love people");
+    }
+ 
+
+}
+
+
+public class Cat extends Animal {//пример наследовани€ - класс Cat наследник класса Animal
+   
+    @Override
+   public void getVoice(){ //пример полиморфизма - использование объектов с одинаковым 
+                           //интерфейсом без информации о конкретном типе этого объекта.
+   System.out.println("Meaou");}
+   
+    private void catsOwnMethod(){ //пример инкапсул€ции - сокрытие реализации
+                            //и предоставление доступа к коду не напр€мую, а через определенные методы.
+        System.out.println("I'm catching mouse");
+    }
+   
+    public static void main(String[] args){
+        Cat cat = new Cat();
+        cat.countOfLegs = 4;
+        cat.name = "Cat";
+        cat.introduction();
+        cat.getVoice();
+        cat.catsOwnMethod();
+        cat.someMethodFromParent();
+    }
+}
